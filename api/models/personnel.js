@@ -13,27 +13,23 @@ const PersonnelSchema = new Schema({
 	},
 	FirstName: {
 		type: String,
-		default: false,
         required: true
 	},
     LastName: {
 		type: String,
-		default: false,
         required: true
 	},
     Job: {
 		type: String,
-		default: false,
         required: true
 	},
     Password: {
 		type: String,
-		default: false,
         required: true
 	},
     PhoneNumber: {
 		type: Number,
-		default: false,
+		default: 0,
 	},
 });
 

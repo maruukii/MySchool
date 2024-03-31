@@ -8,9 +8,29 @@ Content-Type: application/json
 {
     "ID":"D2024@ksourEssef",
 	"CIN":14606600,
-	"FirstName":"Mohamed hedi",
-    "LastName":"Magherbi" ,
+	"FirstName":"Mohamed",
+    "LastName":"Magherbi",
     "Job": "Headmaster",
     "Password": "flyinraijin"
-   
+}
+
+###
+
+DELETE http://localhost:3001/personnel/delete/66094721570a17e7f8e22143
+
+###
+ GET http://localhost:3001/personnel/660947a52aa3a2a21a3d0f8d
+
+###
+ 
+ PUT http://localhost:3001/personnel/update/660947a52aa3a2a21a3d0f8d 
+ Content-Type: application/json
+
+ {
+    "ID":"D2024@ksour",
+	"CIN":14,
+	"FirstName":"fhedi",
+    "LastName":"tddd" ,
+    "Job": "Headmastaaaer",
+    "Password":"0da0da0" 
 }

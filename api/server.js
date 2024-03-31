@@ -6,15 +6,20 @@ app.get('/personnels', async (req, res) => {
 
 	res.json(personnels);
 });
+app.get('/personnel/:id', async (req, res) => {
+	const result = await Personnel.findById(req.params.id);
 
+	res.json({result});
+});
 app.post('/personnel/new', (req, res) => {
 	const personnel = new Personnel({
 		ID: req.body.ID,
         CIN: req.body.CIN,
-        FullName: req.body.FullName,
+        FirstName: req.body.FirstName,
         LastName: req.body.LastName,
         Job: req.body.Job,
-        Password:req.body.Password
+        Password:req.body.Password,
+        PhoneNumber:req.body.PhoneNumber,
 	})
 
 	personnel.save();
@@ -29,13 +34,14 @@ app.delete('/personnel/delete/:id', async (req, res) => {
 });
 
 
-app.put('/todo/update/:id', async (req, res) => {
+app.put('/personnel/update/:id', async (req, res) => {
 	const personnel = await Personnel.findById(req.params.id);
 
-    personnel.FullName= req.body.FullName,
-    personnel.LastName= req.body.LastName,
-    personnel.Job=req.body.Job,
-    personnel.Password=req.body.Password
+    personnel.FirstName= req.body.FirstName;
+    personnel.LastName= req.body.LastName;
+    personnel.Job=req.body.Job;
+    personnel.Password=req.body.Password;
+    personnel.PhoneNumber=req.body.PhoneNumber;
 
 	personnel.save();
 
