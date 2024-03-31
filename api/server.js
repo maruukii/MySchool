@@ -3,14 +3,20 @@ const Personnel = require('./models/personnel');
 const Alumni=require('./models/alumni');
 
 app.get('/personnels', async (req, res) => {
-	const personnels = await Personnel.find();
-
-	res.json(personnels);
+	try{
+        const personnels = await Personnel.find();
+        res.json(personnels);
+} catch (error) {
+    res.status(500).send("Error Fetching Data")
+}
 });
 app.get('/personnel/:id', async (req, res) => {
-	const result = await Personnel.findById(req.params.id);
+	try {const result = await Personnel.findById(req.params.id);
 
 	res.json({result});
+} catch (error) {
+    res.status(404).send("User not Found")
+}
 });
 app.post('/personnel/new', (req, res) => {
 	const personnel = new Personnel({
@@ -29,9 +35,12 @@ app.post('/personnel/new', (req, res) => {
 });
 
 app.delete('/personnel/delete/:id', async (req, res) => {
-	const result = await Personnel.findByIdAndDelete(req.params.id);
-
-	res.json({result});
+	try {
+        const result = await Personnel.findByIdAndDelete(req.params.id);
+        res.json({result});
+    } catch (error) {
+        res.status(404).send("User not Found")
+    }
 });
 
 

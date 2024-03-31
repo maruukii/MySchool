@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3001/personnel/delete/660947a52aa3a2a21a3d0f8d
+DELETE http://localhost:3001/personnel/delete/6609dadad4ddda52aa3da2a21a3d0f8d
 
 ###
  GET http://localhost:3001/personnel/660947a52aa3a2a21a3d0f8d
