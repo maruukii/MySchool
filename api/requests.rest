@@ -1,0 +1,16 @@
+GET http://localhost:3001/personnels
+
+###
+
+POST http://localhost:3001/personnel/new
+Content-Type: application/json
+
+{
+    "ID":"D2024@ksourEssef",
+	"CIN":14606600,
+	"FirstName":"Mohamed hedi",
+    "LastName":"Magherbi" ,
+    "Job": "Headmaster",
+    "Password": "flyinraijin"
+   
+}
