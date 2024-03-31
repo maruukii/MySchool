@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3001/personnel/delete/66094721570a17e7f8e22143
+DELETE http://localhost:3001/personnel/delete/660947a52aa3a2a21a3d0f8d
 
 ###
  GET http://localhost:3001/personnel/660947a52aa3a2a21a3d0f8d
@@ -33,4 +33,40 @@ DELETE http://localhost:3001/personnel/delete/66094721570a17e7f8e22143
     "LastName":"tddd" ,
     "Job": "Headmastaaaer",
     "Password":"0da0da0" 
+}
+
+###
+
+GET http://localhost:3001/alumnis
+
+###
+
+POST http://localhost:3001/alumni/new
+Content-Type: application/json
+
+{
+	"FirstName":"Mohamed",
+    "LastName":"Magherbi",
+    "Spec": "génie LOG",
+    "Age": 12
+}
+
+###
+
+DELETE http://localhost:3001/alumni/delete/660952baafb061b018292a1f
+
+###
+ GET http://localhost:3001/alumni/660952c9afb061b018292a24
+
+###
+ 
+ PUT http://localhost:3001/alumni/update/660952c9afb061b018292a24 
+ Content-Type: application/json
+
+ {
+    
+	"FirstName":"fhedi",
+    "LastName":"tddd" ,
+    "Age":18,
+    "Spec":"Génie IND" 
 }
