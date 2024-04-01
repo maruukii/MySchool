@@ -2,12 +2,12 @@ GET http://localhost:3001/personnels
 
 ###
 
-POST http://localhost:3001/personnel/new
+POST http://localhost:3001/personnels/new
 Content-Type: application/json
 
 {
-    "ID":"D2024@ksourEssef",
-	"CIN":14606600,
+    "ID":"D2024@",
+	"CIN":441414,
 	"FirstName":"Mohamed",
     "LastName":"Magherbi",
     "Job": "Headmaster",
@@ -52,14 +52,12 @@ Content-Type: application/json
 }
 
 ###
-
 DELETE http://localhost:3001/alumni/delete/660952baafb061b018292a1f
 
 ###
  GET http://localhost:3001/alumni/660952c9afb061b018292a24
 
 ###
- 
  PUT http://localhost:3001/alumni/update/660952c9afb061b018292a24 
  Content-Type: application/json
 
@@ -69,4 +67,14 @@ DELETE http://localhost:3001/alumni/delete/660952baafb061b018292a1f
     "LastName":"tddd" ,
     "Age":18,
     "Spec":"Génie IND" 
+}
+
+###
+POST http://localhost:3001/personnels/login
+Content-Type: application/json
+
+{
+
+    "ID":441414,
+    "password":"flyinraijin"
 }

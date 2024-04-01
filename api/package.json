@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon server.js"
+    "start": "nodemon server.js"
   },
   "author": "maruukii (mohamed hedi magherbi)",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
+    "ejs": "^3.1.9",
     "express": "^4.19.2",
     "mongoose": "^8.2.4"
   },
