@@ -1,7 +1,9 @@
 const express=require('express');
-const bcrypt=require('bcrypt');
 const router=express.Router();
 const Personnel = require('../models/personnel');
+// const handleErr=(err)=>{
+//     console.log(err.message,err.code);
+// }
 
 router.get('/', async (req, res) => {
 	try{
@@ -23,20 +25,18 @@ router.get('/:id', async (req, res) => {
 });
 router.post('/new', async (req, res) => {
 try {
-const saltRounds = 10; //Number of salt round for bcrypt
-const hashedPassword = await bcrypt.hash (req.body.Password, saltRounds);
+
 const personnel = new Personnel({
 		ID: req.body.ID,
         CIN: req.body.CIN,
         FirstName: req.body.FirstName,
         LastName: req.body.LastName,
         Job: req.body.Job,
-        Password:hashedPassword,  
+        Password:req.body.Password,  
         PhoneNumber:req.body.PhoneNumber,
 	})
 
 	personnel.save();
-	res.json(personnel);
 } catch (error) {
     console.error("Error Adding Data:", error.message);
     res.status(500).send("Error Adding Data");
@@ -72,11 +72,17 @@ router.put('/update/:id', async (req, res) => {
 
 
 router.post('/login',async (req,res)=>{
-    let found=await Personnel.findOne({ ID:req.body.ID });
+    try {
+        let found=await Personnel.findOne({ ID:req.body.ID });
     console.log('First findOne:', found);
     if(!found){
-        found=await Personnel.findOne({ CIN:req.body.ID });
-        console.log('Second findOne:', found);
+        try {
+           let cin=Number(req.body.ID);
+           found=await Personnel.findOne({ CIN:cin});
+            console.log('Second findOne:', found);
+        } catch (error) {
+        }
+        
     }
     if(!found){res.status(404).send("User not Found");}
     else{
@@ -86,6 +92,11 @@ router.post('/login',async (req,res)=>{
         else{
         res.status(400).send("Wrong Password")        
     }    
-}});
+}
+    } catch (error) {
+        console.error('Error:', error.message);
+        res.status(500).send("Internal Server Error"); 
+    }
+    });
 
 module.exports=router

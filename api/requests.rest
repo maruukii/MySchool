@@ -6,12 +6,12 @@ POST http://localhost:3001/personnels/new
 Content-Type: application/json
 
 {
-    "ID":"D2024@",
-	"CIN":441414,
-	"FirstName":"Mohamed",
-    "LastName":"Magherbi",
-    "Job": "Headmaster",
-    "Password": "flyinraijin"
+    "ID":"D202dad",
+	"CIN":202444,
+	"FirstName":"bruh",
+    "LastName":"momento",
+    "Job": "Supervisor",
+    "Password": "azer1Maa"
 }
 
 ###
@@ -75,6 +75,20 @@ Content-Type: application/json
 
 {
 
-    "ID":441414,
+    "ID":"D2204",
     "password":"flyinraijin"
 }
+
+###
+
+POST http://localhost:3001/teachers/new
+Content-Type: application/json
+
+{
+    "_id":"660a9b652a3130b87e2ae0df",
+    "subject":"Math"
+}
+###
+GET http://localhost:3001/teachers/
+###
+GET http://localhost:3001/teachers/660c08ecb8b0a80034d21e56
