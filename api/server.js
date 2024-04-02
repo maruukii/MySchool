@@ -1,9 +1,12 @@
 const app = require ('./config.js');
 const PORT=3001;
+
+//Routes
 const personnelRoute=require('./routes/personnels.js')
 const alumniRoute=require('./routes/alumnis.js')
 const SubjectRoute=require('./routes/subjects.js')
 const ClassRoute=require('./routes/classes.js')
+
 
 app.use("/personnels",personnelRoute);
 app.use("/alumnis",alumniRoute);
