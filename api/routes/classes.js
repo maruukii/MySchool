@@ -24,7 +24,6 @@ router.post('/new', (req, res) => {
     try {
         const classe = new Class({
             ClassName: req.body.ClassName,
-            AlumnisNumber: req.body.AlumnisNumber,
         })
         classe.save();
         res.json(classe);    
@@ -50,7 +49,18 @@ router.put('/update/:id', async (req, res) => {
     try {
         const classe = await Class.findById(req.params.id);
         classe.ClassName= req.body.ClassName;
-        classe.AlumnisNumber= req.body.AlumnisNumber;
+        classe.save();
+        res.json(classe);   
+    } catch (error) {
+        console.error("Error Updating Data:", error.message);
+        res.status(500).send("Error Updating Data")        
+    }
+	
+});
+router.put('/updateAlumnis/:id', async (req, res) => {
+    try {
+        const classe = await Class.findById(req.params.id);
+        classe.AlumnisNumber+=1;
         classe.save();
         res.json(classe);   
     } catch (error) {
