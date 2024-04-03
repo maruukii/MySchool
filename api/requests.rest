@@ -6,12 +6,12 @@ POST http://localhost:3001/personnels/new
 Content-Type: application/json
 
 {
-    "ID":"D202dad",
-	"CIN":202444,
+    "ID":"dqdqd",
+	"CIN":2412122424,
 	"FirstName":"bruh",
     "LastName":"momento",
     "Job": "Supervisor",
-    "Password": "azer1Maa"
+    "Password": "azeraea1Maa"
 }
 
 ###
