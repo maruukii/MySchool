@@ -92,3 +92,45 @@ Content-Type: application/json
 GET http://localhost:3001/teachers/
 ###
 GET http://localhost:3001/teachers/660c08ecb8b0a80034d21e56
+###
+GET http://localhost:3001/timetables/
+###
+POST http://localhost:3001/timetables/new/
+Content-Type: application/json
+
+{
+    "_id":"660a9b652a3130b87e2ae0df",
+    "subject":"660d5c4e336e020b36759f7b",
+    "class":"660d5d5b336e020b36759f7f",
+}
+###
+PUT http://localhost:3001/timetables/update/660d622faaeb79408ac766e3
+Content-Type: application/json
+
+{
+    "hours":2,
+    "timetable":"/:/:/:/:,/:/:/:/:,/:/xD:/:/:,/:/:/:/:,/:/:/:/:,/:/:/:/:"
+
+}
+###
+
+GET http://localhost:3001/classes/
+###
+POST http://localhost:3001/classes/new/
+Content-Type: application/json
+
+{
+    "ClassName":"3 GL"
+}
+###
+PUT http://localhost:3001/classes/updateAlumnis/660d5c4e336e020b36759f7b
+###
+GET http://localhost:3001/subjects/
+###
+POST http://localhost:3001/subjects/new
+Content-Type: application/json
+
+{
+    "SubjectName":"WEB DEV",
+    "Coef":4
+}
