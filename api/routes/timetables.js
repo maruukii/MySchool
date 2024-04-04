@@ -1,7 +1,11 @@
 const express=require('express');
 const router=express.Router();
 const Timetable = require('../models/timetable');
+const strings = [];
 
+for (let i = 1; i <= 16; i++) {
+    strings.push('s' + i);
+}
 router.get('/', async (req, res) => {
 	try{
         const timetables = await Timetable.find().populate(['Personnel','Class','Subject']);
@@ -56,7 +60,18 @@ router.put('/update/:id', async (req, res) => {
             timetable.Hours+=req.body.hours;
         }
         if(req.body.timetable){
-            timetable.Timetable= req.body.timetable;
+            const NewArray = req.body.timetable;
+            if (NewArray.length !== timetable.Timetable.length) {
+                console.error("Error Updating Data:", error.message);
+                res.status(401).send("Timetable update error"); // Arrays have different lengths
+                throw 'Exiting try block'; 
+            }
+            for (let i = 0; i < timetable.Timetable.length; i++) {
+                for (let j = 0; j < timetable.Timetable[i].length; j++) {
+                 timetable.Timetable[i][j]= NewArray[i][j];
+                }
+            }
+            
         }
         timetable.save();
          res.json(timetable);    
