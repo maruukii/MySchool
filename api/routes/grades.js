@@ -1,11 +1,11 @@
-const Subject=require('../models/subject');
+const Grade=require('../models/grade');
 const express=require('express');
 const router=express.Router();
 
 router.get('/', async (req, res) => {
     try{
-        const subjects = await Subject.find();
-	    res.json(subjects);
+        const grades = await Grade.find().populate(['Alumni','Teacher','Subject']);
+	    res.json(grades);
 } catch (error) {
     console.error("Error Fetching Data:", error.message);
     res.status(500).send("Error Fetching Data")
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 router.get('/:id', async (req, res) => {
 try {
-    const result = await Subject.findById(req.params.id);
+    const result = await Grade.findById(req.params.id);
 	res.json({result});
 } catch (error) {
     console.error("Data not Found:", error.message);
@@ -22,15 +22,16 @@ try {
 });
 router.post('/new', (req, res) => {
     try {
-        const subject = new Subject({
-            SubjectName: req.body.SubjectName,
-            Coef: req.body.Coef,
-            CoefDC: req.body.Coefdc,
-            CoefDS: req.body.Coefds,
-            CoefTP: req.body.Coeftp,
+        const grade = new Grade({
+            Alumni: req.body.alumni,
+            Subject:req.body.subject,
+            Teacher:req.body.teacher,
+            DC_grade:req.body.dc,
+            DS_grade:req.body.ds,
+            TP_grade:req.body.tp,
         })
-        subject.save();
-        res.json(subject);    
+        grade.save();
+        res.json(grade);    
     } catch (error) {
         console.error("Error Adding Data:", error.message);
         res.status(500).send("Error Adding Data")   
@@ -40,7 +41,7 @@ router.post('/new', (req, res) => {
 
 router.delete('/delete/:id', async (req, res) => {
 try {	
-    const result = await Subject.findByIdAndDelete(req.params.id);
+    const result = await Grade.findByIdAndDelete(req.params.id);
 	res.json({result});
 } catch (error) {
     console.error("Error Deleting Data:", error.message);
@@ -51,19 +52,18 @@ try {
 
 router.put('/update/:id', async (req, res) => {
     try {
-        const subject = await Subject.findById(req.params.id);
-        subject.SubjectName= req.body.SubjectName;
-        subject.Coef= req.body.Coef;
-        subject.CoefDC= req.body.Coefdc;
-        subject.CoefDS= req.body.Coefds;
-        subject.CoefTP= req.body.Coeftp;
-        subject.save();
-        res.json(subject);   
+        const grade = await Grade.findById(req.params.id);
+        grade.DC_grade= req.body.dc;
+        grade.DS_grade= req.body.ds;
+        grade.TP_grade= req.body.tp;
+        grade.save();
+        res.json(grade);   
     } catch (error) {
         console.error("Error Updating Data:", error.message);
         res.status(500).send("Error Updating Data")        
     }
 	
 });
+
 
 module.exports=router;

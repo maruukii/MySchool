@@ -12,7 +12,7 @@ const TeacherSchema = new Schema({
 		type: String,
         default:"New"
 	},
-    Subject: {
+    Specialty: {
         type:String,
         required:true
     }
