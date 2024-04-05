@@ -86,7 +86,7 @@ Content-Type: application/json
 
 {
     "_id":"660a9b652a3130b87e2ae0df",
-    "subject":"Math"
+    "spec":"Math"
 }
 ###
 GET http://localhost:3001/teachers/
@@ -137,6 +137,28 @@ POST http://localhost:3001/subjects/new
 Content-Type: application/json
 
 {
-    "SubjectName":"WEB DEV",
-    "Coef":4
+    "SubjectName":"English",
+    "Coef":4,
+    "Coefdc":1.5,
+    "Coefds":2
+}
+###
+GET http://localhost:3001/grades/
+###
+POST http://localhost:3001/grades/new
+Content-Type: application/json
+
+{
+    "alumni":"660953103da6f725818eef95",
+    "teacher":"660c08ecb8b0a80034d21e56",
+    "subject":"66100003e58e339373609abe",
+    "tp":19,
+    "ds":15
+}
+###
+PUT http://localhost:3001/grades/update/660ffd8745d7cae4ccfcc867
+Content-Type: application/json
+
+{
+    "tp":10
 }

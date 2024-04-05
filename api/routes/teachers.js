@@ -26,7 +26,7 @@ try {
 const teacher = new Teacher({
 		Personnel: req.body._id,
         Rank:req.body.rank,
-        Subject:req.body.subject
+        Specialty:req.body.spec
 	})
 
 	teacher.save();
@@ -52,7 +52,7 @@ router.put('/update/:id', async (req, res) => {
     try {
         const teacher = await Teacher.findById(req.params.id);
         teacher.Rank= req.body.Rank;
-        teacher.Subject= req.body.Subject;
+        teacher.Specialty= req.body.spec;
         teacher.save();
         res.json(teacher);    
     } catch (error) {

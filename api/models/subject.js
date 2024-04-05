@@ -9,7 +9,19 @@ const SubjectSchema = new Schema({
 	Coef: {
 		type: Number,
         required: true
-	}
+	},
+	CoefDC: {
+		type: Number,
+        default: 0
+	},
+	CoefDS: {
+		type: Number,
+        default: 0
+	},
+	CoefTP: {
+		type: Number,
+        default: 0
+	},
 });
 
 const Subject = mongoose.model("Subject", SubjectSchema);
