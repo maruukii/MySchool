@@ -37,11 +37,11 @@ DELETE http://localhost:3001/personnel/delete/6609dadad4ddda52aa3da2a21a3d0f8d
 
 ###
 
-GET http://localhost:3001/alumnis
+GET http://localhost:3001/alumnis/
 
 ###
 
-POST http://localhost:3001/alumni/new
+POST http://localhost:3001/alumnis/new
 Content-Type: application/json
 
 {
@@ -52,13 +52,13 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3001/alumni/delete/660952baafb061b018292a1f
+DELETE http://localhost:3001/alumnis/delete/660952baafb061b018292a1f
 
 ###
- GET http://localhost:3001/alumni/660952c9afb061b018292a24
+ GET http://localhost:3001/alumnis/660952c9afb061b018292a24
 
 ###
- PUT http://localhost:3001/alumni/update/660952c9afb061b018292a24 
+ PUT http://localhost:3001/alumnis/update/660952c9afb061b018292a24 
  Content-Type: application/json
 
  {
@@ -162,3 +162,28 @@ Content-Type: application/json
 {
     "tp":10
 }
+###
+GET http://localhost:3001/teachings/
+###
+POST http://localhost:3001/teachings/new
+Content-Type: application/json
+
+{
+    "class":"660d5c4e336e020b36759f7b",
+    "teacher":"660c08ecb8b0a80034d21e56",
+    "subject":"66100003e58e339373609abe"
+}
+###
+GET http://localhost:3001/registres/
+###
+POST http://localhost:3001/registres/new
+Content-Type: application/json
+
+{
+    "alumni":"660953103da6f725818eef95",
+    "teaching":"661159491e75c1d7cfc111d6"
+}
+###
+PUT http://localhost:3001/registres/updateUp/66115a0db0db072dffd64957
+###
+PUT http://localhost:3001/registres/updateDown/66115a0db0db072dffd64957
