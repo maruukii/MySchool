@@ -1,9 +1,14 @@
+@import "../../styles/variables.scss";
 .footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 30px;
-  
+    height: 50px;
+    font-family: "Inter", sans-serif;
+  background-color: $main-bg;
+  color: $main-color;
+    
     span{
   
       &:first-child{

@@ -1,10 +1,13 @@
 import React from 'react'
-
+import Menu from '../../../components/menu/TeacherMenu'
+import "../../../styles/global.scss"
 const Teacher = () => {
   return (
-    <div>
-      gg
-    </div>
+    <div className="menuContainer">
+    
+        <Menu />
+     
+ </div>
   )
 }
 
