@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import "./menu.scss";
-import { menu } from "../../data";
+import { Headmastermenu } from "../../data";
 
-const Menu = () => {
+const HeadmasterMenu = () => {
   return (
     <div className="menu">
-      {menu.map((item) => (
+      {Headmastermenu.map((item) => (
         <div className="item" key={item.id}>
           <span className="title">{item.title}</span>
           {item.listItems.map((listItem) => (
@@ -20,4 +20,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default HeadmasterMenu;

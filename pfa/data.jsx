@@ -1,4 +1,4 @@
-export const menu = [
+export const Headmastermenu = [
     {
       id: 1,
       title: "main",
@@ -19,64 +19,35 @@ export const menu = [
     },
     {
       id: 2,
-      title: "lists",
+      title: "Operations",
       listItems: [
         {
           id: 1,
-          title: "Users",
-          url: "/users",
-          icon: "user.svg",
+          title: "Classrooms",
+          url: "/classrooms",
+          icon: "classroom-svgrepo-com.svg",
         },
         {
           id: 2,
-          title: "Products",
-          url: "/products",
-          icon: "product.svg",
+          title: "Classes",
+          url: "/classes",
+          icon: "classroom-teacher-svgrepo-com.svg",
         },
         {
           id: 3,
-          title: "Orders",
-          url: "/orders",
-          icon: "order.svg",
+          title: "Timetables",
+          url: "/timetables",
+          icon: "calendar-svgrepo-com.svg",
         },
         {
           id: 4,
-          title: "Posts",
-          url: "/posts",
-          icon: "post2.svg",
+          title: "Notifications",
+          url: "/notifications",
+          icon: "notifications.svg",
         },
       ],
     },
-    {
-      id: 3,
-      title: "general",
-      listItems: [
-        {
-          id: 1,
-          title: "Elements",
-          url: "/",
-          icon: "element.svg",
-        },
-        {
-          id: 2,
-          title: "Notes",
-          url: "/",
-          icon: "note.svg",
-        },
-        {
-          id: 3,
-          title: "Forms",
-          url: "/",
-          icon: "form.svg",
-        },
-        {
-          id: 4,
-          title: "Calendar",
-          url: "/",
-          icon: "calendar.svg",
-        },
-      ],
-    },
+    
     {
       id: 4,
       title: "Maintenance",
@@ -89,29 +60,146 @@ export const menu = [
         },
         {
           id: 2,
-          title: "Backups",
+          title: "Complaint",
           url: "/",
-          icon: "backup.svg",
+          icon: "customer-problem-svgrepo-com.svg",
+        },
+      ],
+    },
+    
+  ];
+  export const Supervisormenu = [
+    {
+      id: 1,
+      title: "main",
+      listItems: [
+        {
+          id: 1,
+          title: "Homepage",
+          url: "/",
+          icon: "home.svg",
+        },
+        {
+          id: 2,
+          title: "Profile",
+          url: "/",
+          icon: "user.svg",
         },
       ],
     },
     {
-      id: 5,
-      title: "analytics",
+      id: 2,
+      title: "Operations",
       listItems: [
         {
           id: 1,
-          title: "Charts",
-          url: "/",
-          icon: "chart.svg",
+          title: "Alumnis",
+          url: "/alumnis",
+          icon: "student-head-svgrepo-com.svg",
         },
         {
           id: 2,
-          title: "Logs",
-          url: "/",
-          icon: "log.svg",
+          title: "My Timetable",
+          url: "/timetables",
+          icon: "calendar-svgrepo-com.svg",
+        },
+        {
+          id: 4,
+          title: "Notifications",
+          url: "/notifications",
+          icon: "notifications.svg",
         },
       ],
     },
+    
+    {
+      id: 4,
+      title: "Maintenance",
+      listItems: [
+        {
+          id: 1,
+          title: "Settings",
+          url: "/",
+          icon: "setting.svg",
+        },
+        {
+          id: 2,
+          title: "Complaint",
+          url: "/",
+          icon: "customer-problem-svgrepo-com.svg",
+        },
+      ],
+    },
+    
+  ];
+  export const Teachermenu = [
+    {
+      id: 1,
+      title: "main",
+      listItems: [
+        {
+          id: 1,
+          title: "Homepage",
+          url: "/",
+          icon: "home.svg",
+        },
+        {
+          id: 2,
+          title: "Profile",
+          url: "/",
+          icon: "user.svg",
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: "Operations",
+      listItems: [
+        {
+          id: 1,
+          title: "Class Register",
+          url: "/registres",
+          icon: "register-svgrepo-com.svg",
+        },
+        {
+          id: 2,
+          title: "Grades",
+          url: "/grades",
+          icon: "grade-a-plus-svgrepo-com.svg",
+        },
+        {
+          id: 3,
+          title: "My Timetable",
+          url: "/timetables",
+          icon: "calendar-svgrepo-com.svg",
+        },
+        {
+          id: 4,
+          title: "Notifications",
+          url: "/notifications",
+          icon: "notifications.svg",
+        },
+      ],
+    },
+    
+    {
+      id: 4,
+      title: "Maintenance",
+      listItems: [
+        {
+          id: 1,
+          title: "Settings",
+          url: "/",
+          icon: "setting.svg",
+        },
+        {
+          id: 2,
+          title: "Complaint",
+          url: "/",
+          icon: "customer-problem-svgrepo-com.svg",
+        },
+      ],
+    },
+    
   ];
   
