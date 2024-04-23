@@ -53,10 +53,11 @@ try {
 router.put('/update/:id', async (req, res) => {
     try {
         const alumni = await Alumni.findById(req.params.id);
-        alumni.FirstName= req.body.FirstName;
-        alumni.LastName= req.body.LastName;
-        alumni.Age=req.body.Age;
-        alumni.Spec=req.body.Spec;
+        if(req.body.FirstName){alumni.FirstName= req.body.FirstName;}
+        if(req.body.LastName){alumni.LastName= req.body.LastName;}
+        if(req.body.Age){ alumni.Age=req.body.Age;}
+        if(req.body.Spe){alumni.Spec=req.body.Spec;}
+        if(req.body.Class){alumni.Class=req.body.Class;}
     
         alumni.save();
     

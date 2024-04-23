@@ -24,6 +24,7 @@ router.post('/new', (req, res) => {
     try {
         const classe = new Class({
             ClassName: req.body.ClassName,
+            Level:req.body.Level
         })
         classe.save();
         res.json(classe);    
@@ -48,7 +49,8 @@ try {
 router.put('/update/:id', async (req, res) => {
     try {
         const classe = await Class.findById(req.params.id);
-        classe.ClassName= req.body.ClassName;
+        if(req.body.ClassName){classe.ClassName= req.body.ClassName;}
+        if(req.body.Level){classe.Level= req.body.Level;}
         classe.save();
         res.json(classe);   
     } catch (error) {
