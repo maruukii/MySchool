@@ -76,13 +76,13 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Homepage",
-          url: "/",
+          url: "",
           icon: "home.svg",
         },
         {
           id: 2,
           title: "Profile",
-          url: "/",
+          url: "profil",
           icon: "user.svg",
         },
       ],
@@ -100,7 +100,7 @@ export const Headmastermenu = [
         {
           id: 2,
           title: "My Timetable",
-          url: "/timetables",
+          url: "timetable",
           icon: "calendar-svgrepo-com.svg",
         },
         {

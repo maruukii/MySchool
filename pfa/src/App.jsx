@@ -4,13 +4,14 @@ import Teacher from "./pages/home/Teacher";
 import "../styles/global.scss";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
-import Login from "./pages/login/Login";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-
+import SupervisorTime from "./pages/timetable/SupervisorTime";
+import HeadmasterTime from "./pages/timetable/HeadmasterTime";
+import TeacherTime from "./pages/timetable/TeacherTime";
 const queryClient = new QueryClient();
 
 function App() {
@@ -19,14 +20,11 @@ function App() {
       <div>
       <div className="main">
         <Navbar />
-        <div className="container">
-         
-          <div className="contentContainer">
-            <QueryClientProvider client={queryClient}>
+        <QueryClientProvider client={queryClient}>
               <Outlet />
             </QueryClientProvider>
-          </div>
-        </div>
+          
+        
         
       </div>
       <Footer />
@@ -42,22 +40,39 @@ function App() {
         {
           path: "/Supervisors",
           element: <Supervisor />,
+          children:[
+            {
+                path: "Timetable",
+                element: <SupervisorTime />,
+            }
+          ]
         },
+        
         {
           path: "/Headmasters",
           element: <Headmaster/>,
+          children:[
+            {
+              path: "Timetable",
+              element: <HeadmasterTime />,
+            },
+          ]
         },
+        
         {
           path: "/Teachers",
           element: <Teacher/>,
+          children:[
+            {
+              path: "Timetable",
+              element: <TeacherTime />,
+            },
+          ]
         },
         
       ],
     },
-    {
-      path: "/login",
-      element: <Login />,
-    },
+    
   ]);
   return <RouterProvider router={router} />;
 }

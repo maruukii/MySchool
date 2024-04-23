@@ -1,22 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const _alumni = require('./alumni');
-const _subject=require('./subject');
-const _teacher=require('./teacher');      
+const _teaching=require('./teaching');      
 const GradeSchema = new Schema({
 	Alumni: {
 		type: Schema.Types.ObjectId, 
         ref: _alumni,
 		required:true	
 	},
-	Subject: {
+    Teaching: {
 		type: Schema.Types.ObjectId, 
-        ref: _subject,
-		required:true
-	},
-    Teacher: {
-		type: Schema.Types.ObjectId, 
-        ref: _teacher,
+        ref: _teaching,
 		required:true
 	},
     DC_grade: {

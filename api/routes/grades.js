@@ -4,7 +4,7 @@ const router=express.Router();
 
 router.get('/', async (req, res) => {
     try{
-        const grades = await Grade.find().populate(['Alumni','Teacher','Subject']);
+        const grades = await Grade.find().populate(['Alumni','Teaching']);
 	    res.json(grades);
 } catch (error) {
     console.error("Error Fetching Data:", error.message);
@@ -24,8 +24,7 @@ router.post('/new', (req, res) => {
     try {
         const grade = new Grade({
             Alumni: req.body.alumni,
-            Subject:req.body.subject,
-            Teacher:req.body.teacher,
+            Teaching:req.body.teaching,
             DC_grade:req.body.dc,
             DS_grade:req.body.ds,
             TP_grade:req.body.tp,

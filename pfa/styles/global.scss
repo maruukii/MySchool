@@ -19,14 +19,24 @@ a {
   height: 95vh;
 }
 
-.container {
+.containerContent {
   display: flex;
   
 }
-
+.content{
+  
+  border: 2px solid $soft-color;
+  border-radius: 16px; 
+  background-color: $dark-color;
+  opacity: 0.7;
+  padding: 15px;
+  }
+.timetable table td{
+  border-bottom: 1px solid black;
+}
 .menuContainer {
   width: 250px;
-  padding: 5px ;
+  padding: 5px 20px;
   border-right: 2px solid $soft-bg;
   
 
@@ -37,6 +47,68 @@ a {
 
 .contentContainer {
   padding: 5px 20px;
+  // width: 100%;
+  display: flex;
+  margin: auto auto;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+}
+.current{
+display: flex;
+flex-direction: column;
+margin: 10px;
+}
+.titleOP{
+  font-size: 1.6rem;
+  background-color: #d98225; // Background color of the section title
+  color: #333; // Text color
+  font-weight: bold; // Font weight
+  padding: 10px 20px; // Adjust padding as needed
+  margin: 10px 10px;
+  max-width: 40vh;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  // Optional: Add shadow for depth
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Adjust shadow as needed
+
+}
+
+
+
+.form-signin {
   width: 100%;
-  
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  background-color:#384256 ;
+}
+
+.form-signin .form-floating{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type=email] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type=password] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.text-center {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
