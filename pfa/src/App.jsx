@@ -12,6 +12,10 @@ import {
 import SupervisorTime from "./pages/timetable/SupervisorTime";
 import HeadmasterTime from "./pages/timetable/HeadmasterTime";
 import TeacherTime from "./pages/timetable/TeacherTime";
+import Login from "./pages/login/Login";
+import ManageAlumni from "./pages/alumni/manageAlumni";
+import Classroom from "./pages/Classroom/classroom";
+
 const queryClient = new QueryClient();
 
 function App() {
@@ -19,6 +23,7 @@ function App() {
     return (
       <div>
       <div className="main">
+        
         <Navbar />
         <QueryClientProvider client={queryClient}>
               <Outlet />
@@ -44,6 +49,10 @@ function App() {
             {
                 path: "Timetable",
                 element: <SupervisorTime />,
+
+            },{
+              path:"alumnis",
+              element:<ManageAlumni/>
             }
           ]
         },
@@ -52,6 +61,10 @@ function App() {
           path: "/Headmasters",
           element: <Headmaster/>,
           children:[
+            {
+              path: "Classrooms",
+              element: <Classroom />,
+            },
             {
               path: "Timetable",
               element: <HeadmasterTime />,
@@ -71,8 +84,10 @@ function App() {
         },
         
       ],
-    },
-    
+      
+    },{
+    path: "/login",
+      element: <Login />}
   ]);
   return <RouterProvider router={router} />;
 }
