@@ -6,13 +6,13 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Homepage",
-          url: "/",
+          url: "",
           icon: "home.svg",
         },
         {
           id: 2,
           title: "Profile",
-          url: "/",
+          url: "",
           icon: "user.svg",
         },
       ],
@@ -24,19 +24,19 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Classrooms",
-          url: "/classrooms",
+          url: "classrooms",
           icon: "classroom-svgrepo-com.svg",
         },
         {
           id: 2,
           title: "Classes",
-          url: "/classes",
+          url: "classes",
           icon: "classroom-teacher-svgrepo-com.svg",
         },
         {
           id: 3,
           title: "Timetables",
-          url: "/timetables",
+          url: "timetable",
           icon: "calendar-svgrepo-com.svg",
         },
         {
@@ -55,13 +55,13 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Settings",
-          url: "/",
+          url: "",
           icon: "setting.svg",
         },
         {
           id: 2,
           title: "Complaint",
-          url: "/",
+          url: "",
           icon: "customer-problem-svgrepo-com.svg",
         },
       ],
@@ -94,7 +94,7 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Alumnis",
-          url: "/alumnis",
+          url: "alumnis",
           icon: "student-head-svgrepo-com.svg",
         },
         {
@@ -106,7 +106,7 @@ export const Headmastermenu = [
         {
           id: 4,
           title: "Notifications",
-          url: "/notifications",
+          url: "notifications",
           icon: "notifications.svg",
         },
       ],
@@ -140,13 +140,13 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Homepage",
-          url: "/",
+          url: "",
           icon: "home.svg",
         },
         {
           id: 2,
           title: "Profile",
-          url: "/",
+          url: "",
           icon: "user.svg",
         },
       ],
@@ -158,25 +158,25 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Class Register",
-          url: "/registres",
+          url: "registres",
           icon: "register-svgrepo-com.svg",
         },
         {
           id: 2,
           title: "Grades",
-          url: "/grades",
+          url: "grades",
           icon: "grade-a-plus-svgrepo-com.svg",
         },
         {
           id: 3,
           title: "My Timetable",
-          url: "/timetables",
+          url: "timetables",
           icon: "calendar-svgrepo-com.svg",
         },
         {
           id: 4,
           title: "Notifications",
-          url: "/notifications",
+          url: "notifications",
           icon: "notifications.svg",
         },
       ],
@@ -189,13 +189,13 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Settings",
-          url: "/",
+          url: "",
           icon: "setting.svg",
         },
         {
           id: 2,
           title: "Complaint",
-          url: "/",
+          url: "",
           icon: "customer-problem-svgrepo-com.svg",
         },
       ],

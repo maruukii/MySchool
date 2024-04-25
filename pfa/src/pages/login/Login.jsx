@@ -6,17 +6,14 @@ import ReactDOM from 'react-dom/client'
 import App from '../../App.jsx'
 
 const handleClick = () => {
-  ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>)
+ 
 };
 const Login = () => {
   return (
     <>
     <div className='main'>
       <LoginNav></LoginNav>
-      
+      <div className='loginContainer'>
     <div className="text-center">
     
     <div className="form-signin">
@@ -39,7 +36,7 @@ const Login = () => {
       </form>
     </div>      
       </div>
-      
+      </div>
       </div>
       <Footer></Footer>
       </>

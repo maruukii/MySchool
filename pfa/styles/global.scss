@@ -74,7 +74,9 @@ margin: 10px;
 
 }
 
-
+.loginContainer{
+  margin-top: 3rem;
+}
 
 .form-signin {
   width: 100%;
@@ -105,6 +107,7 @@ margin: 10px;
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  margin-bottom:3.5rem ;
 }
 .text-center {
   display: flex;
@@ -112,3 +115,102 @@ margin: 10px;
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+.manageBar{
+  border-top-left-radius: 10px; // Adjust the radius as needed
+  border-top-right-radius: 10px; // Adjust the radius as needed
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:rgb(47, 78, 92);
+}
+
+.search{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  
+  padding: 20px; /* Customize padding */
+  position: relative;
+}
+.search label{
+  margin: 0.5rem;
+}
+.search select{
+  margin: 0.5rem;
+}
+.search input{
+  margin: 0.5rem;
+}
+
+
+.titleSearch {
+  margin: 0;
+  position: relative;
+  top: 20px;
+  z-index: 1;
+  font-size: 1.8rem;
+  margin-left: 0.5rem;
+}
+.table tbody tr td[colspan="3"]{
+  display: flex;
+  align-items: center;
+  justify-content: center ; /* Horizontally center the buttons */
+
+}
+.table tbody tr td[colspan="3"] button {
+  margin: 0.2rem; // Adjust the padding value as needed
+}
+@media (max-width: 1050px) {
+  .table tbody tr td[colspan="3"] {
+flex-wrap: wrap;  }
+}
+.crud{margin: 0.8rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.crud button{
+  font-size: 1rem;
+  max-height: fit-content;
+  margin: 0.5rem;
+  position: relative;
+  top: 10px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: $main-bg;
+  padding: 20px;
+  border-radius: 5px;
+  animation: slideIn 0.8s forwards;
+}
+.popup-content form button{
+  margin: 2.5rem;
+}
+.popup-title{
+  text-align: center;
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+
+
