@@ -1,7 +1,7 @@
 import React from 'react'
 import "../../../styles/global.scss"
-import LoginNav from '../../../components/navbar/LoginNav'
-import Footer from '../../../components/footer/Footer'
+import LoginNav from '../../components/navbar/LoginNav'
+import Footer from '../../components/footer/Footer'
 import ReactDOM from 'react-dom/client'
 import App from '../../App.jsx'
 

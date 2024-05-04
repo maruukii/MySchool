@@ -2,20 +2,21 @@ import Supervisor from "./pages/home/Supervisor";
 import Headmaster from "./pages/home/Headmaster";
 import Teacher from "./pages/home/Teacher";
 import "../styles/global.scss";
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/footer/Footer";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
 import SupervisorTime from "./pages/timetable/SupervisorTime";
-import HeadmasterTime from "./pages/timetable/HeadmasterTime";
 import TeacherTime from "./pages/timetable/TeacherTime";
 import Login from "./pages/login/Login";
 import ManageAlumni from "./pages/alumni/manageAlumni";
 import Classroom from "./pages/Classroom/classroom";
-
+import Classes from "./pages/class/class"
+import Admin from "./pages/home/Admin"
+import Profil from "./pages/profil/profil";
 const queryClient = new QueryClient();
 
 function App() {
@@ -62,13 +63,14 @@ function App() {
           element: <Headmaster/>,
           children:[
             {
+              path: "Classes",
+              element: <Classes />,
+            },
+            {
               path: "Classrooms",
               element: <Classroom />,
             },
-            {
-              path: "Timetable",
-              element: <HeadmasterTime />,
-            },
+            
           ]
         },
         
@@ -82,7 +84,25 @@ function App() {
             },
           ]
         },
-        
+        {
+          path: "/Admin",
+          element: <Admin />,
+          children:[
+            {
+              path: "profil/:id",
+              element: <Profil />,
+
+          },
+            {
+                path: "Workspaces",
+                element: <SupervisorTime />,
+
+            },{
+              path:"alumnis",
+              element:<ManageAlumni/>
+            }
+          ]
+        },
       ],
       
     },{

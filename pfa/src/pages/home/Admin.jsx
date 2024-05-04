@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from '../../components/menu/HeadmasterMenu'
+import Menu from '../../components/menu/AdminMenu'
 import "../../../styles/global.scss"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import {
@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
-const Headmaster = () => {
+const Admin = () => {
   return (
     <div className="containerContent">
     <div className="menuContainer">
@@ -26,4 +26,4 @@ const Headmaster = () => {
   )
 }
 
-export default Headmaster
+export default Admin

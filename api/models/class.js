@@ -10,6 +10,10 @@ const ClassSchema = new Schema({
 		type: Number,
 		required: true
 	},
+	ClassSpec: {
+		type: String,
+        required:true
+	},
     AlumnisNumber: {
 		type: Number,
         default:0,

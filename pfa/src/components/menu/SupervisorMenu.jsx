@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import "./menu.scss";
-import { Headmastermenu } from "../../data";
+import { Supervisormenu } from "../../../data";
 
-const HeadmasterMenu = () => {
+const SupervisorMenu = () => {
   return (
     <div className="menu">
-      {Headmastermenu.map((item) => (
+      {Supervisormenu.map((item) => (
         <div className="item" key={item.id}>
           <span className="title">{item.title}</span>
           {item.listItems.map((listItem) => (
-            <Link to={listItem.url} className="listItem" key={listItem.id}>
-              <img src={`../${listItem.icon}`} alt="" />
+            <Link to={`/supervisors/${listItem.url}`} className="listItem" key={listItem.id}>
+              <img src={`../../${listItem.icon}`} alt="" />
               <span className="listItemTitle">{listItem.title}</span>
             </Link>
           ))}
@@ -20,4 +20,4 @@ const HeadmasterMenu = () => {
   );
 };
 
-export default HeadmasterMenu;
+export default SupervisorMenu;
