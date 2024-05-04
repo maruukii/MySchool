@@ -4,8 +4,8 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo">
-        <img src="logo.svg" alt="" />
-        <span>My School</span>
+        <img src="/school-svgrepo-com.svg" alt="" />
+        <span className="apptitle">My School</span>
       </div>
       <div className="icons">
         <img src="/search.svg" alt="" className="icon" />

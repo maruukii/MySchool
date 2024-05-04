@@ -1,4 +1,4 @@
-@import "../../styles/responsive.scss";
+@import "../../../styles/responsive.scss";
 
 .navbar {
   width: 100%;
@@ -13,6 +13,9 @@
     align-items: center;
     font-weight: bold;
     gap: 10px;
+  }
+  .apptitle{
+    margin-top: 0.5rem;
   }
   .icons {
     display: flex;

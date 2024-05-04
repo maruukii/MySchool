@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import "./menu.scss";
-import { Teachermenu } from "../../data";
+import { Adminmenu } from "../../../data";
 
-const TeacherMenu = () => {
+const AdminMenu = () => {
   return (
     <div className="menu">
-      {Teachermenu.map((item) => (
+      {Adminmenu.map((item) => (
         <div className="item" key={item.id}>
           <span className="title">{item.title}</span>
           {item.listItems.map((listItem) => (
             <Link to={listItem.url} className="listItem" key={listItem.id}>
-              <img src={`../${listItem.icon}`} alt="" />
+              <img src={`../../${listItem.icon}`} alt="" />
               <span className="listItemTitle">{listItem.title}</span>
             </Link>
           ))}
@@ -20,4 +20,4 @@ const TeacherMenu = () => {
   );
 };
 
-export default TeacherMenu;
+export default AdminMenu;

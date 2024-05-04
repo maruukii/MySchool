@@ -36,6 +36,7 @@ const manageAlumni = () => {
               <label htmlFor="specialty">Specialty</label>
                 <select type="text" className="form-control" >
                   <option value="">Select...</option>
+                  <option value="nospec">No specialty</option>
                   <option value="Technology">Technology</option>
                   <option value="Math">Math</option>
                   <option value="Computer Science">Computer Science</option>

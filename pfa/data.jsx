@@ -42,7 +42,7 @@ export const Headmastermenu = [
         {
           id: 4,
           title: "Notifications",
-          url: "/notifications",
+          url: "notifications",
           icon: "notifications.svg",
         },
       ],
@@ -119,13 +119,13 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Settings",
-          url: "/",
+          url: "",
           icon: "setting.svg",
         },
         {
           id: 2,
           title: "Complaint",
-          url: "/",
+          url: "",
           icon: "customer-problem-svgrepo-com.svg",
         },
       ],
@@ -202,4 +202,88 @@ export const Headmastermenu = [
     },
     
   ];
+  export const Adminmenu = [
+    {
+      id: 1,
+      title: "main",
+      listItems: [
+        {
+          id: 1,
+          title: "Homepage",
+          url: "",
+          icon: "home.svg",
+        },
+        {
+          id: 2,
+          title: "Profile",
+          url: "profil/1",
+          icon: "user.svg",
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: "Operations",
+      listItems: [
+        {
+          id: 1,
+          title: "Workspaces",
+          url: "workspaces",
+          icon: "workspace-svgrepo-com.svg",
+        },
+        {
+          id: 2,
+          title: "Users",
+          url: "users",
+          icon: "users-svgrepo-com.svg",
+        },
+        {
+          id: 3,
+          title: "Subjects",
+          url: "subjects",
+          icon: "content-svgrepo-com.svg",
+        },
+        {
+          id: 4,
+          title: "Complaints",
+          url: "complaints",
+          icon: "customer-problem-svgrepo-com.svg",
+        },
+        {
+          id: 4,
+          title: "Audit log",
+          url: "audits",
+          icon: "audit-report-svgrepo-com.svg",
+        },
+      ],
+    },
+    
+    {
+      id: 4,
+      title: "Maintenance",
+      listItems: [
+        {
+          id: 1,
+          title: "Settings",
+          url: "",
+          icon: "setting.svg",
+        }
+      ],
+    },
+    
+  ];
+  export const singleUser = {
+    id: 1,
+    title: "Jane Doe",
+    img: "../../public/img.svg",
+    info: {
+      CIN: 14606600,
+      fullname: "Jane Doe",
+      email: "janendoe@gmail.com",
+      phone: "20 526 895",
+      status: "active",
+      workspace:" Not Difined",
+    },
+    
+  };
   

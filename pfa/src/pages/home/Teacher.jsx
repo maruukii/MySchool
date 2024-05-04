@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from '../../../components/menu/TeacherMenu'
+import Menu from '../../components/menu/TeacherMenu'
 import "../../../styles/global.scss"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import {

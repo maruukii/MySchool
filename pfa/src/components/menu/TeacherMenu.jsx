@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import "./menu.scss";
-import { Supervisormenu } from "../../data";
+import { Teachermenu } from "../../../data";
 
-const SupervisorMenu = () => {
+const TeacherMenu = () => {
   return (
     <div className="menu">
-      {Supervisormenu.map((item) => (
+      {Teachermenu.map((item) => (
         <div className="item" key={item.id}>
           <span className="title">{item.title}</span>
           {item.listItems.map((listItem) => (
-            <Link to={`/supervisors/${listItem.url}`} className="listItem" key={listItem.id}>
-              <img src={`../${listItem.icon}`} alt="" />
+            <Link to={listItem.url} className="listItem" key={listItem.id}>
+              <img src={`../../${listItem.icon}`} alt="" />
               <span className="listItemTitle">{listItem.title}</span>
             </Link>
           ))}
@@ -20,4 +20,4 @@ const SupervisorMenu = () => {
   );
 };
 
-export default SupervisorMenu;
+export default TeacherMenu;
