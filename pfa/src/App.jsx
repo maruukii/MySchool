@@ -9,7 +9,6 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-import SupervisorTime from "./pages/timetable/SupervisorTime";
 import TeacherTime from "./pages/timetable/TeacherTime";
 import Login from "./pages/login/Login";
 import ManageAlumni from "./pages/alumni/manageAlumni";
@@ -18,6 +17,9 @@ import Classes from "./pages/class/class"
 import Admin from "./pages/home/Admin"
 import Profil from "./pages/profil/profil";
 import Users from "./pages/users/users"
+import Workspace from "./pages/workspace/workspace";
+import Subject from "./pages/subject/subject";
+import Timetables from "./pages/timetable/manageTimetable"
 const queryClient = new QueryClient();
 
 function App() {
@@ -67,7 +69,10 @@ function App() {
               path: "Classrooms",
               element: <Classroom />,
             },
-            
+            {
+              path: "Timetables",
+              element: <Timetables />,
+            },
           ]
         },
         
@@ -92,9 +97,14 @@ function App() {
           },
             {
                 path: "Workspaces",
-                element: <SupervisorTime />,
+                element: <Workspace/>,
 
             },
+            {
+              path: "Subjects",
+              element: <Subject/>,
+
+          },
             {
               path: "Users",
               element: <Users />,

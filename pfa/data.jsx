@@ -36,7 +36,7 @@ export const Headmastermenu = [
         {
           id: 3,
           title: "Timetables",
-          url: "timetable",
+          url: "",
           icon: "calendar-svgrepo-com.svg",
         },
         {
@@ -99,9 +99,9 @@ export const Headmastermenu = [
         },
         {
           id: 2,
-          title: "My Timetable",
-          url: "timetable",
-          icon: "calendar-svgrepo-com.svg",
+          title: "Alumni Grades",
+          url: "alumnigrade",
+          icon: "grade-a-plus-svgrepo-com.svg",
         },
         {
           id: 4,
@@ -286,6 +286,216 @@ export const Headmastermenu = [
     },
     
   };
+  export const workspaces=[
+    {id:1,
+      code:"ksouressef1",
+      name:"Lycée ksour Essef",
+      users:3
+    },
+    {
+      id:2,
+      code:"ksouressef2",
+    name:"Lycée Aboulkacem chebbi",
+    users:0},
+    {id:3,
+      code:"mahdia1",
+    name:"Lycée Technique",
+    users:5},
+    {id:4,
+      code:"mahdia2",
+    name:"Lycée mixte",
+    users:6}
+    ,
+    {id:5,
+      code:"djerba",
+    name:"Lycée Djerba",
+    users:1},
+    {id:6,
+      code:"sousse1",
+    name:"Lycée Sahloul 1",
+    users:25}
+    ,
+    {id:7,
+      code:"sousse4",
+    name:"Lycée Sahloul 4",
+    users:10}
+  ]
+  export const subjects=[
+    {id:1,
+      code:"8588",
+      name:"Math",
+      spec:"No specialty",
+      coef:3,
+      coefDC:1,
+      coefDS:2
+    },
+    {
+      id:2,
+      code:"8580",
+      name:"Physics",
+      spec:"No specialty",
+      coef:4,
+      coefDC:1,
+      coefTP:1.5,
+      coefDS:2},
+    {id:3,
+      code:"8570",
+      name:"Arabic",
+      spec:"No specialty",
+      coef:1,
+      coefDC:1,
+      coefDS:2},
+    {id:4,
+      code:"8480",
+      name:"Computer Science",
+      spec:"Computer Science",
+      coef:4,
+      coefTP:3,
+      coefDS:1.5}
+    ,
+    {id:5,
+      code:"8101",
+      name:"French",
+      spec:"No specialty",
+      coef:2,
+      coefDC:1,
+      coefDS:2},
+    {id:6,
+      code:"5584",
+      name:"Science",
+      spec:"Fundamental Science",
+      coef:4,
+      coefDC:1,
+      coefDS:2}
+    ,
+    {id:7,
+      code:"8588",
+      name:"Math",
+      spec:"Maths",
+      coef:5,
+      coefDC:1.5,
+      coefDS:3}
+  ]
+  export const classrooms=[
+    {id:1,
+      type:"Lab",
+      number:302,
+      capacity:15,
+    },
+    {id:2,
+      type:"Normal",
+      number:301,
+      capacity:30,
+    },
+    {id:3,
+      type:"Lab",
+      number:201,
+      capacity:25,
+    },
+    {id:4,
+      type:"Lab",
+      number:202,
+      capacity:14,
+    },
+    {id:5,
+      type:"Lab",
+      number:305,
+      capacity:12,
+    },{id:6,
+      type:"Normal",
+      number:106,
+      capacity:27,
+    }
+    
+  ]
+  export const classes=[
+    {id:1,
+      level:"First level",
+      spec:"No specialty",
+      classname:"Class A",
+      alumnis:5
+    },
+    {id:2,
+      level:"Second level",
+      spec:"Computer Science",
+      classname:"Class A",
+      alumnis:15
+    },
+    {id:3,
+      level:"Second level",
+      spec:"Computer Science",
+      classname:"Class B",
+      alumnis:21
+    },
+    {id:4,
+      level:"First level",
+      spec:"No specialty",
+      classname:"Class B",
+      alumnis:8
+    },
+    {id:5,
+      level:"Fourth level",
+      spec:"Maths",
+      classname:"Class A",
+      alumnis:10
+    },{id:6,
+      level:"Fourth level",
+      spec:"Literature",
+      classname:"Class A",
+      alumnis:30
+    }
+    
+  ]
+  export const alumnis=[
+    {id: 1,
+      first:"Mohamed",
+      last:"Magherbi",
+      age:19,
+      spec:"Computer Science",
+      level:"Fourth level",
+      class:"Class A"
+    },
+    {id: 2,
+      first:"Mohamed",
+      last:"Foulen",
+      age:20,
+      spec:"Fundamental Science",
+      level:"Fourth level",
+      class:"Class B"
+    },
+    {id: 3,
+      first:"Foulen",
+      last:"Ben foulen",
+      age:15,
+      level:"First level",
+      class:"Class C"
+    },
+    {id: 4,
+      first:"Ahmed",
+      last:"Achref",
+      age:18,
+      spec:"Computer Science",
+      level:"Third level",
+      class:"Class A"
+    },
+    {id: 5,
+      first:"Hedi",
+      last:"Magherbi",
+      age:17,
+      spec:"Computer Science",
+      level:"Third level",
+      class:"Class A"
+    },
+    {id: 6,
+      first:"Mohamed",
+      last:"Gammoudi",
+      age:19,
+      spec:"Sports",
+      level:"Fourth level",
+      class:"Class A"
+    },
+    
+  ]
   export const userRows = [
     {
       id: 1,

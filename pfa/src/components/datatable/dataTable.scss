@@ -3,7 +3,9 @@
   .dataGrid{
     background: white;
     padding: 20px;
-
+    .MuiDataGrid-columnHeaderTitle {
+      font-weight: bold;
+    }
     .MuiDataGrid-toolbarContainer{
       flex-direction: row-reverse;
     }
