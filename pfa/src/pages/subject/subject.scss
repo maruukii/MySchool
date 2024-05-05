@@ -1,0 +1,28 @@
+.users{
+
+    .info{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+  
+      button{
+        padding: 5px;
+        cursor: pointer;
+      }
+    }
+    .titleOP{
+        font-size: 1.6rem;
+        background-color: #d98225; // Background color of the section title
+        color: #ffffff; // Text color
+        font-weight: bold; // Font weight
+        padding: 10px 20px; // Adjust padding as needed
+        margin: 10px 10px;
+        max-width: 40vh;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        // Optional: Add shadow for depth
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Adjust shadow as needed
+      
+      }
+  }

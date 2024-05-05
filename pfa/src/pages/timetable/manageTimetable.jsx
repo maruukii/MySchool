@@ -1,19 +1,68 @@
 import React from 'react'
-import "../../../styles/global.scss"
-import Menu from '../../components/menu/SupervisorMenu'
-
-const SupervisorTime = () => {
+import { useState } from 'react'
+import Add from "../../components/add/add"
+const manageTimetable = () => {
+    const [open,setOpen]=useState(false)
+    const columns = [
+        {
+            field: "cin",
+            type: "text",
+            headerName: "CIN",
+          },
+          {
+            field: "full",
+            type: "text",
+            headerName: "Full name",
+          },
+          
+          {
+            field: "subject",
+            type: "text",
+            headerName: "Subject",
+          },
+          {
+            field: "level",
+            type: "text",
+            headerName: "Level",
+          },
+          {
+            field: "class",
+            type: "text",
+            headerName: "Class",
+          },
+          {
+            field: "group",
+            type: "text",
+            headerName: "Group",
+          },
+          {
+            field: "start",
+            type: "time",
+            headerName: "Start time",
+          },
+          {
+            field: "end",
+            type: "time",
+            headerName: "End Time",
+          },
+           
+      ];
   return (
     <div>
+        
       <div className="containerContent">
-    
+      <div className="users">
+        {open && <Add slug="Timetable" columns={columns} setOpen={setOpen} />}
+        </div>
       <div className='current'>
-        <div className='titleOP'> My Timetable</div>
-
+        <div><div className='titleOP'> My Timetable</div>
+        <button className='btn btn-success' style={{margin:"1rem"}} onClick={() => setOpen(true)}>Modify Timetable</button></div>
+        
           
             
           <div className='content'>
             <div className='timetable'>
+                <h1 className="table table-light" style={{fontSize:"1.2rem",color:"white"}}>Timetable for Mohamed, MAGHERBI, 14606600</h1>
             <table className="table table-light  table-bordered">
             <thead>
     <tr>
@@ -36,7 +85,7 @@ const SupervisorTime = () => {
       <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
-      <td colSpan={2} className='table-danger'></td>
+      <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
@@ -48,7 +97,7 @@ const SupervisorTime = () => {
       <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
-      <td colSpan={2} className='table-danger'></td>
+      <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
@@ -57,13 +106,13 @@ const SupervisorTime = () => {
     <tr>
       <th scope="row">Wednesday</th>
       <td></td>
-      <td className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className='table-danger'></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
+      <td ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
     </tr>
@@ -71,21 +120,21 @@ const SupervisorTime = () => {
       <th scope="row">Thursday</th>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className='table-danger'></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2}></td>
+      <td colSpan={2} ></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
     </tr>
     <tr>
       <th scope="row">Friday</th>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className="table-success"></td>
-      <td colSpan={2} className='table-danger'></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2} ></td>
+      <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
@@ -97,7 +146,7 @@ const SupervisorTime = () => {
       <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
-      <td colSpan={2} className='table-danger'></td>
+      <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
       <td colSpan={2}></td>
@@ -111,8 +160,7 @@ const SupervisorTime = () => {
           </div>
           </div>
           </div>
-    
   )
 }
 
-export default SupervisorTime
+export default manageTimetable

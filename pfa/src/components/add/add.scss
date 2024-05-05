@@ -1,0 +1,96 @@
+@import "../../../styles/variables.scss";
+
+.add {
+  width: 100vw;
+  height: 103vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.724);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  .modal {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: $main-bg;
+    position: relative;
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 24px;
+      color: $soft-color;
+    }
+    .modifbutton{
+      margin: 25px;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 500px;
+      justify-content: space-between;
+
+      .item {
+        width: 44%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        label {
+          font-size: 14px;
+        }
+
+        .input-container {
+          position: relative;
+          width: 100%;
+        
+          input {
+            width: calc(100% - 1px);
+            padding: 10px;
+            background-color: transparent;
+            color: white;
+            outline: none;
+            border: 1px solid $soft-color;
+            border-radius: 3px;
+          }
+        
+          .clear-button {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #aaa; /* Adjust color as needed */
+          }
+        }
+        
+        select {
+          padding: 10px;
+          background-color: $main-bg;
+          color: white;
+          outline: none;
+          border: 1px solid $soft-color;
+          border-radius: 3px;
+        }
+        .info{
+          width: fit-content;
+        }
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
