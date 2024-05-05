@@ -1,5 +1,9 @@
+import {useState} from 'react'
 import "./single.scss";
-const [showPopup, setShowPopup] = useState(false);
+
+
+  const Single = (props) => {
+    const [showPopup, setShowPopup] = useState(false);
    
   const togglePopup = () => {
     setShowPopup(!showPopup);
@@ -13,7 +17,6 @@ const [showPopup, setShowPopup] = useState(false);
         setValue(inputValue);
       }
     };
-  const Single = (props) => {
     return (
       <div className="single">
         <div className="view">

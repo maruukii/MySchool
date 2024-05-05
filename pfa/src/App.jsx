@@ -17,6 +17,7 @@ import Classroom from "./pages/Classroom/classroom";
 import Classes from "./pages/class/class"
 import Admin from "./pages/home/Admin"
 import Profil from "./pages/profil/profil";
+import Users from "./pages/users/users"
 const queryClient = new QueryClient();
 
 function App() {
@@ -48,10 +49,6 @@ function App() {
           element: <Supervisor />,
           children:[
             {
-                path: "Timetable",
-                element: <SupervisorTime />,
-
-            },{
               path:"alumnis",
               element:<ManageAlumni/>
             }
@@ -97,10 +94,11 @@ function App() {
                 path: "Workspaces",
                 element: <SupervisorTime />,
 
-            },{
-              path:"alumnis",
-              element:<ManageAlumni/>
-            }
+            },
+            {
+              path: "Users",
+              element: <Users />,
+          },
           ]
         },
       ],
