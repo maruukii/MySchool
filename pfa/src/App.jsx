@@ -20,21 +20,26 @@ import Users from "./pages/users/users"
 import Workspace from "./pages/workspace/workspace";
 import Subject from "./pages/subject/subject";
 import Timetables from "./pages/timetable/manageTimetable"
+import AdminHome from "./components/Home/admin"
+import OtherHome from "./components/Home/others"
+import Register from "./pages/registre/registre"
+import { useState } from "react";
+import axios from "axios";
 const queryClient = new QueryClient();
 
 function App() {
+  const [isLoggedin, setisLoggedin] = useState(false)
+//  
+
   const Layout = () => {
     return (
       <div>
       <div className="main">
         
-        <Navbar />
+        {!isLoggedin&&<Login setisLoggedin={setisLoggedin}/>}
         <QueryClientProvider client={queryClient}>
               <Outlet />
             </QueryClientProvider>
-          
-        
-        
       </div>
       <Footer />
       </div>
@@ -48,18 +53,21 @@ function App() {
       children: [
         {
           path: "/Supervisors",
-          element: <Supervisor />,
+          element: <Supervisor setisLoggedin={setisLoggedin} />,
           children:[
             {
               path:"alumnis",
               element:<ManageAlumni/>
+            },{
+              path:"",
+              element:<OtherHome/>
             }
           ]
         },
         
         {
           path: "/Headmasters",
-          element: <Headmaster/>,
+          element: <Headmaster setisLoggedin={setisLoggedin}/>,
           children:[
             {
               path: "Classes",
@@ -72,24 +80,39 @@ function App() {
             {
               path: "Timetables",
               element: <Timetables />,
-            },
+            },{
+              path:"",
+              element:<OtherHome/>
+            }
           ]
         },
         
         {
           path: "/Teachers",
-          element: <Teacher/>,
+          element: <Teacher setisLoggedin={setisLoggedin}/>,
           children:[
+            {
+              path: "Register",
+              element: <Register />,
+            },
             {
               path: "Timetable",
               element: <TeacherTime />,
-            },
+            },{
+              path:"",
+              element:<OtherHome/>
+            }
           ]
         },
         {
           path: "/Admin",
-          element: <Admin />,
+          element: <Admin  setisLoggedin={setisLoggedin}/>,
           children:[
+            {
+              path: "",
+              element: <AdminHome />,
+
+          },
             {
               path: "profil/:id",
               element: <Profil />,

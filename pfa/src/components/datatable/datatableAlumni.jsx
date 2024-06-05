@@ -1,10 +1,7 @@
 import React,{useState} from 'react';
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import Modify from "../../components/add/modify";
-import Affect from "../../components/add/affect";
-
+import axios from 'axios'
 import "./dataTable.scss";
-import { Link } from "react-router-dom";
 // import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const DataTable = (props) => {
@@ -24,18 +21,29 @@ const DataTable = (props) => {
   // //   }
   // // });
 
-  const handleDelete = (id) => {
-    //delete the item
-    // mutation.mutate(id)
+  const handleDelete = (row) => {
+    props.setDelopen(true);
+    props.setRow(row);
   };
   const handleModify = (row) => {
     props.setModifopen(true);
     props.setRow(row);
   };
-  const handleAffect = (row) => {
-    props.setAffectopen(true);
-    props.setRow(row);
-  };
+  const handleAffect = async (row) => {
+    try {
+      const alu = await axios.get("http://localhost:3001/alumnis/"+row["_id"]);
+      props.setRow(alu.data.result);
+      const LevelSpec = { classLevel: row["Level"], specialty: row["Spec"] };
+      const response = await axios.get("http://localhost:3001/classes/get", { params: LevelSpec });
+      console.log(response.data);
+      props.setClasses(response.data);
+      props.setAffectopen(true); // Set affectopen only after successful data fetch
+    } catch (error) {
+      console.log(error);
+      // Handle error if needed
+    }
+  }
+  
 
   const actionColumn = {
     field: "action",
@@ -45,11 +53,11 @@ const DataTable = (props) => {
       return (
         <div className="action">
             <div className='affect' onClick={()=>handleAffect(params.row)}> <img src="/up-arrow-svgrepo-com.svg" alt="" />
-          {open&&<Affect slug="user" rowData={data} setOpen={setOpen} />}</div>
+          </div>
           <div className='modify' onClick={()=>handleModify(params.row)}> <img src="/view.svg" alt="" />
-          {open&&<Modify slug="user" rowData={data} setOpen={setOpen} />}</div>
+           </div>
            
-          <div className="delete" onClick={() => handleDelete(params.row.id)}>
+          <div className="delete" onClick={() => handleDelete(params.row)}>
             <img src="/delete.svg" alt="" />
           </div>
         </div>
@@ -63,6 +71,7 @@ const DataTable = (props) => {
         className="dataGrid"
         rows={props.rows}
         columns={[...props.columns, actionColumn]}
+        getRowId={(row) => row._id} // Ensure the unique identifier is used correctly
         initialState={{
           pagination: {
             paginationModel: {

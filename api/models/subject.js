@@ -6,6 +6,14 @@ const SubjectSchema = new Schema({
 		type: String,
 		required: true
 	},
+	Level: {
+		type: String,
+        required: true
+	},
+	Spec: {
+		type: String,
+        required: true
+	},
 	Coef: {
 		type: Number,
         required: true

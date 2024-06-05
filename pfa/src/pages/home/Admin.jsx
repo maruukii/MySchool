@@ -6,10 +6,18 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-
+import Navbar from '../../components/navbar/Navbar'
 const queryClient = new QueryClient();
-const Admin = () => {
+const Admin = (props) => {
+  
+  // const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  // const toggleDropdown = () => {
+  //   setDropdownOpen(!isDropdownOpen);
+  // };
+ 
   return (
+    <><Navbar setisLoggedin={props.setisLoggedin}/*setDropdownOpen={setDropdownOpen}*//>
     <div className="containerContent">
     <div className="menuContainer">
       <Menu /> 
@@ -22,7 +30,7 @@ const Admin = () => {
            
           </div>
        
-          </div>
+          </div></>
   )
 }
 

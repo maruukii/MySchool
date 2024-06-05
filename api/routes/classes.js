@@ -11,6 +11,25 @@ router.get('/', async (req, res) => {
     res.status(500).send("Error Fetching Data")
 }
 });
+router.get('/get', async (req, res) => {
+    const { specialty, classLevel } = req.query;
+
+    try {
+        console.log(req.query)
+        if (!specialty || !classLevel) {
+            return res.status(400).send("Both specialty and class level are required");
+        }
+
+        const classes = await Class.find({ 
+            ClassSpec: specialty,
+            Level: classLevel
+        });
+        res.json(classes);
+    } catch (error) {
+        console.error("Data not Found:", error.message);
+            res.status(404).send("Data not Found")
+        }
+    });
 router.get('/:id', async (req, res) => {
 try {
     const result = await Class.findById(req.params.id);
@@ -22,9 +41,13 @@ try {
 });
 router.post('/new', (req, res) => {
     try {
+        var spec=null
+        if(req.body.ClassSpec==null){spec="No Specialty"}
+        else{spec=req.body.ClassSpec}
         const classe = new Class({
             ClassName: req.body.ClassName,
-            Level:req.body.Level
+            Level:req.body.Level,
+            ClassSpec:spec,
         })
         classe.save();
         res.json(classe);    
@@ -51,6 +74,7 @@ router.put('/update/:id', async (req, res) => {
         const classe = await Class.findById(req.params.id);
         if(req.body.ClassName){classe.ClassName= req.body.ClassName;}
         if(req.body.Level){classe.Level= req.body.Level;}
+        if(req.body.ClassSpec){classe.ClassSpec= req.body.ClassSpec;}
         classe.save();
         res.json(classe);   
     } catch (error) {
@@ -59,7 +83,7 @@ router.put('/update/:id', async (req, res) => {
     }
 	
 });
-router.put('/updateAlumnis/:id', async (req, res) => {
+router.put('/updateAlumnisUp/:id', async (req, res) => {
     try {
         const classe = await Class.findById(req.params.id);
         classe.AlumnisNumber+=1;
@@ -71,5 +95,16 @@ router.put('/updateAlumnis/:id', async (req, res) => {
     }
 	
 });
-
+router.put('/updateAlumnisDown/:id', async (req, res) => {
+    try {
+        const classe = await Class.findById(req.params.id);
+        classe.AlumnisNumber-=1;
+        classe.save();
+        res.json(classe);   
+    } catch (error) {
+        console.error("Error Updating Data:", error.message);
+        res.status(500).send("Error Updating Data")        
+    }
+	
+});
 module.exports=router;

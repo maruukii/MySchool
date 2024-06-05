@@ -21,12 +21,13 @@ router.get('/:id', async (req, res) => {
     res.status(404).send("Data not Found")
 }
 });
+
 router.post('/new', async (req, res) => {
 try {
 const teacher = new Teacher({
-		Personnel: req.body._id,
-        Rank:req.body.rank,
-        Specialty:req.body.spec
+		Personnel: req.body.Personnel,
+        Rank:req.body.Rank,
+        Specialty:req.body.Specialty
 	})
 
 	teacher.save();
