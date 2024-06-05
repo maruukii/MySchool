@@ -13,6 +13,8 @@ const TimetableRoute=require('./routes/timetables.js')
 const GradeRoute=require('./routes/grades.js')
 const TeachingRoute=require('./routes/teachings.js')
 const RegistreRoute=require('./routes/registres.js')
+const WorkspaceRoute=require('./routes/workpaces.js')
+const ClassroomRoute=require('./routes/classrooms.js')
 
 app.use("/personnels",personnelRoute);
 app.use("/alumnis",alumniRoute);
@@ -25,7 +27,8 @@ app.use("/timetables",TimetableRoute);
 app.use("/grades",GradeRoute);
 app.use("/teachings",TeachingRoute);
 app.use("/registres",RegistreRoute);
-
+app.use("/workspaces",WorkspaceRoute);
+app.use("/classrooms",ClassroomRoute);
 app.listen(PORT,()=>{
     console.log("Server running on Port ",PORT);
 });

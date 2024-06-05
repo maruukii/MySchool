@@ -25,22 +25,27 @@ export const Headmastermenu = [
           id: 1,
           title: "Classrooms",
           url: "classrooms",
-          icon: "classroom-svgrepo-com.svg",
+          icon: "door-open-svgrepo-com.svg",
         },
         {
           id: 2,
           title: "Classes",
           url: "classes",
+          icon: "college-classroom-svgrepo-com.svg",
+        },{
+          id: 3,
+          title: "Teaching",
+          url: "",
           icon: "classroom-teacher-svgrepo-com.svg",
         },
         {
-          id: 3,
+          id: 4,
           title: "Timetables",
           url: "",
           icon: "calendar-svgrepo-com.svg",
         },
         {
-          id: 4,
+          id: 5,
           title: "Notifications",
           url: "notifications",
           icon: "notifications.svg",
@@ -52,14 +57,9 @@ export const Headmastermenu = [
       id: 4,
       title: "Maintenance",
       listItems: [
+       
         {
           id: 1,
-          title: "Settings",
-          url: "",
-          icon: "setting.svg",
-        },
-        {
-          id: 2,
           title: "Complaint",
           url: "",
           icon: "customer-problem-svgrepo-com.svg",
@@ -104,7 +104,7 @@ export const Headmastermenu = [
           icon: "grade-a-plus-svgrepo-com.svg",
         },
         {
-          id: 4,
+          id: 3,
           title: "Notifications",
           url: "notifications",
           icon: "notifications.svg",
@@ -113,17 +113,12 @@ export const Headmastermenu = [
     },
     
     {
-      id: 4,
+      id: 3,
       title: "Maintenance",
       listItems: [
+        
         {
           id: 1,
-          title: "Settings",
-          url: "",
-          icon: "setting.svg",
-        },
-        {
-          id: 2,
           title: "Complaint",
           url: "",
           icon: "customer-problem-svgrepo-com.svg",
@@ -158,7 +153,7 @@ export const Headmastermenu = [
         {
           id: 1,
           title: "Class Register",
-          url: "registres",
+          url: "",
           icon: "register-svgrepo-com.svg",
         },
         {
@@ -170,7 +165,7 @@ export const Headmastermenu = [
         {
           id: 3,
           title: "My Timetable",
-          url: "timetables",
+          url: "timetable",
           icon: "calendar-svgrepo-com.svg",
         },
         {
@@ -183,17 +178,12 @@ export const Headmastermenu = [
     },
     
     {
-      id: 4,
+      id: 3,
       title: "Maintenance",
       listItems: [
+        
         {
           id: 1,
-          title: "Settings",
-          url: "",
-          icon: "setting.svg",
-        },
-        {
-          id: 2,
           title: "Complaint",
           url: "",
           icon: "customer-problem-svgrepo-com.svg",
@@ -250,7 +240,7 @@ export const Headmastermenu = [
           icon: "customer-problem-svgrepo-com.svg",
         },
         {
-          id: 4,
+          id: 5,
           title: "Audit log",
           url: "audits",
           icon: "audit-report-svgrepo-com.svg",
@@ -259,7 +249,7 @@ export const Headmastermenu = [
     },
     
     {
-      id: 4,
+      id: 3,
       title: "Maintenance",
       listItems: [
         {
@@ -324,6 +314,7 @@ export const Headmastermenu = [
     {id:1,
       code:"8588",
       name:"Math",
+      level:"First Level",
       spec:"No specialty",
       coef:3,
       coefDC:1,
@@ -333,6 +324,7 @@ export const Headmastermenu = [
       id:2,
       code:"8580",
       name:"Physics",
+      level:"First Level",
       spec:"No specialty",
       coef:4,
       coefDC:1,
@@ -341,6 +333,7 @@ export const Headmastermenu = [
     {id:3,
       code:"8570",
       name:"Arabic",
+      level:"First Level",
       spec:"No specialty",
       coef:1,
       coefDC:1,
@@ -348,6 +341,7 @@ export const Headmastermenu = [
     {id:4,
       code:"8480",
       name:"Computer Science",
+      level:"Fourth Level",
       spec:"Computer Science",
       coef:4,
       coefTP:3,
@@ -356,6 +350,7 @@ export const Headmastermenu = [
     {id:5,
       code:"8101",
       name:"French",
+      level:"First Level",
       spec:"No specialty",
       coef:2,
       coefDC:1,
@@ -363,6 +358,7 @@ export const Headmastermenu = [
     {id:6,
       code:"5584",
       name:"Science",
+      level:"Third Level",
       spec:"Fundamental Science",
       coef:4,
       coefDC:1,
@@ -371,11 +367,194 @@ export const Headmastermenu = [
     {id:7,
       code:"8588",
       name:"Math",
+      level:"Second Level",
       spec:"Maths",
       coef:5,
       coefDC:1.5,
       coefDS:3}
   ]
+  export const barChartBoxWork = {
+    title: "Total users per Workspace",
+    color: "#702963",
+    dataKey: "users",
+    chartData: [
+      {
+        id:1,
+        name: "ksour1",
+        users: 120,
+      },
+      {
+        id:2,
+        name: "ksour2",
+        users: 40,
+      },
+      {
+        id:3,
+        name: "sahloul1",
+        users: 55,
+      },
+      {id:4,
+        name: "mahdia2",
+        users: 70,
+      },
+      {id:5,
+        name: "sfax4",
+        users: 112,
+      },
+      {id:6,
+        name: "sfax1",
+        users: 177,
+      },
+      {id:7,
+        name: "sahlou2",
+        users: 215,
+      },
+    ],
+  };
+  export const barChartBoxAb = {
+    title: "Total Absence per day",
+    color: "#FF8042",
+    dataKey: "absence",
+    chartData: [
+      
+      {
+        id:2,
+        name: "Mon",
+        absence: 25,
+      },
+      {
+        id:3,
+        name: "Tue",
+        absence: 5,
+      },
+      {id:4,
+        name: "Wed",
+        absence: 70,
+      },
+      {id:5,
+        name: "Thu",
+        absence: 35,
+      },
+      {id:6,
+        name: "Fri",
+        absence: 10,
+      },
+      {id:7,
+        name: "Sat",
+        absence: 80,
+      },
+    ],
+  };
+  export const barChartBoxVisit = {
+    title: "Total Visit per day",
+    color: "#FF8042",
+    dataKey: "visit",
+    chartData: [
+      {
+        id:1,
+        name: "Sun",
+        visit: 4000,
+      },
+      {
+        id:2,
+        name: "Mon",
+        visit: 3000,
+      },
+      {
+        id:3,
+        name: "Tue",
+        visit: 2000,
+      },
+      {id:4,
+        name: "Wed",
+        visit: 2780,
+      },
+      {id:5,
+        name: "Thu",
+        visit: 1890,
+      },
+      {id:6,
+        name: "Fri",
+        visit: 2390,
+      },
+      {id:7,
+        name: "Sat",
+        visit: 3490,
+      },
+    ],
+  };
+  export const chartBoxUser = {
+    color: "#8884d8",
+    icon: "/userIcon.svg",
+    title: "Total Users",
+    number: "1200",
+    dataKey: "users",
+    percentage: 45,
+    chartData: [
+      { name: "Sun", users: 25 },
+      { name: "Mon", users: 124 },
+      { name: "Tue", users: 400 },
+      { name: "Wed", users: 600 },
+      { name: "Thu", users: 750 },
+      { name: "Fri", users: 1100 },
+      { name: "Sat", users: 1200 },
+    ],
+  };
+  export const chartBoxAlu = {
+    color: "#8884d8",
+    icon: "/userIcon.svg",
+    title: "Total Alumnis",
+    number: "1501",
+    dataKey: "users",
+    percentage: 45,
+    chartData: [
+      { name: "Sun", users: 25 },
+      { name: "Mon", users: 124 },
+      { name: "Tue", users: 400 },
+      { name: "Wed", users: 600 },
+      { name: "Thu", users: 750 },
+      { name: "Fri", users: 1100 },
+      { name: "Sat", users: 1200 },
+    ],
+  };
+  export const chartBoxAluAb = {
+    color: "#8884d8",
+    icon: "/userIcon.svg",
+    title: "Total Alumnis absence",
+    number: "450",
+    dataKey: "users",
+    percentage: 45,
+    chartData: [
+      { name: "Sun", users: 25 },
+      { name: "Mon", users: 124 },
+      { name: "Tue", users: 400 },
+      { name: "Wed", users: 600 },
+      { name: "Thu", users: 750 },
+      { name: "Fri", users: 1100 },
+      { name: "Sat", users: 1200 },
+    ],
+  };
+  export const chartBoxHead = {
+    color: "#8884d8",
+    icon: "/userIcon.svg",
+    title: "Total Headmasters",
+    number: "160",
+    dataKey: "users",
+  };
+  export const chartBoxSup = {
+    color: "#8884d8",
+    icon: "/userIcon.svg",
+    title: "Total Supervisors",
+    number: "340",
+    dataKey: "users",
+  };
+  export const chartBoxTea = {
+    color: "#8884d8",
+    icon: "/userIcon.svg",
+    title: "Total Teachers",
+    number: "700",
+    dataKey: "users",
+  };
   export const classrooms=[
     {id:1,
       type:"Lab",

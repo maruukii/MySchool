@@ -23,9 +23,9 @@ const DataTable = (props) => {
   // //   }
   // // });
 
-  const handleDelete = (id) => {
-    //delete the item
-    // mutation.mutate(id)
+  const handleDelete = (row) => {
+    props.setDelopen(true);
+    props.setRow(row);
   };
   const handleModify = (row) => {
     props.setModifopen(true);
@@ -40,9 +40,9 @@ const DataTable = (props) => {
       return (
         <div className="action">
           <div className='modify' onClick={()=>handleModify(params.row)}> <img src="/view.svg" alt="" />
-          {open&&<Modify slug="user" rowData={data} setOpen={setOpen} />}</div>
+          </div>
            
-          <div className="delete" onClick={() => handleDelete(params.row.id)}>
+          <div className="delete" onClick={() => handleDelete(params.row)}>
             <img src="/delete.svg" alt="" />
           </div>
         </div>
@@ -56,6 +56,7 @@ const DataTable = (props) => {
         className="dataGrid"
         rows={props.rows}
         columns={[...props.columns, actionColumn]}
+        getRowId={(row) => row._id} // Ensure the unique identifier is used correctly
         initialState={{
           pagination: {
             paginationModel: {

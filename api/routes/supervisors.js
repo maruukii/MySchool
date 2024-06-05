@@ -24,8 +24,8 @@ router.get('/:id', async (req, res) => {
 router.post('/new', async (req, res) => {
 try {
 const supervisor = new Supervisor({
-		Personnel: req.body._id,
-        Rank:req.body.rank,
+		Personnel: req.body.Personnel,
+        Rank:req.body.Rank,
 	})
 
 	supervisor.save();

@@ -7,7 +7,7 @@ const ClassSchema = new Schema({
 		required: true
 	},
 	Level: {
-		type: Number,
+		type: String,
 		required: true
 	},
 	ClassSpec: {

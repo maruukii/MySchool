@@ -6,7 +6,6 @@ POST http://localhost:3001/personnels/new
 Content-Type: application/json
 
 {
-    "ID":"dqdqd",
 	"CIN":2412122424,
 	"FirstName":"bruh",
     "LastName":"momento",
@@ -45,14 +44,15 @@ POST http://localhost:3001/alumnis/new
 Content-Type: application/json
 
 {
-	"FirstName":"Mohamed",
-    "LastName":"Magherbi",
-    "Spec": "génie LOG",
-    "Age": 12
+	"FirstName":"mhm",
+    "LastName":"hmh",
+    "Spec": "génie INF",
+    "Age": 12,
+    "Level":"First Level"
 }
 
 ###
-DELETE http://localhost:3001/alumnis/delete/660952baafb061b018292a1f
+DELETE http://localhost:3001/alumnis/delete/660952c9afb061b018292a24
 
 ###
  GET http://localhost:3001/alumnis/660952c9afb061b018292a24

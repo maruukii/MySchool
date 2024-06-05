@@ -1,5 +1,9 @@
 @import "../../../styles/variables.scss";
-
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .add {
   width: 100vw;
   height: 103vh;
@@ -81,9 +85,14 @@
           outline: none;
           border: 1px solid $soft-color;
           border-radius: 3px;
+          
         }
         .info{
           width: fit-content;
+        }
+        .info2{
+          width: fit-content;
+          margin-right: 10rem;
         }
       }
       button {

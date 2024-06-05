@@ -1,7 +1,10 @@
 const express=require('express');
+const Subject=require('../models/subject');
+const Classes=require('../models/class');
 const router=express.Router();
 const Timetable = require('../models/timetable');
 const strings = [];
+const room=require('../models/classroom');
 
 for (let i = 1; i <= 16; i++) {
     strings.push('s' + i);
@@ -25,13 +28,22 @@ router.get('/:id', async (req, res) => {
     res.status(404).send("Data not Found")
 }
 });
+router.get('/get/:id', async (req, res) => {
+    try {
+        
+        const classes = await Timetable.find({ Personnel: req.params.id });
+        
+        
+        res.json(classes);
+    } catch (error) {
+        console.error("Data not Found:", error.message);
+        res.status(500).send("An error occurred while fetching data");
+    }
+});
 router.post('/new', async (req, res) => {
 try {
 const timetable = new Timetable({
-		Personnel: req.body._id,
-        Subject:req.body.subject,
-        Class:req.body.class,
-        Hours:req.body.hours,
+		Personnel: req.body.teacher,
 	})
 
 	timetable.save();
@@ -55,25 +67,29 @@ router.delete('/delete/:id', async (req, res) => {
 
 router.put('/update/:id', async (req, res) => {
      try {
+        console.log(req.params.id)
+        console.log(req.body)
         const timetable = await Timetable.findById(req.params.id);
-        if(req.body.hours){
-            timetable.Hours+=req.body.hours;
-        }
-        if(req.body.timetable){
-            const NewArray = req.body.timetable;
-            if (NewArray.length !== timetable.Timetable.length) {
-                console.error("Error Updating Data:", error.message);
-                res.status(401).send("Timetable update error"); // Arrays have different lengths
-                throw 'Exiting try block'; 
-            }
-            for (let i = 0; i < timetable.Timetable.length; i++) {
-                for (let j = 0; j < timetable.Timetable[i].length; j++) {
-                 timetable.Timetable[i][j]= NewArray[i][j];
+        
+        if(req.body.endtime){
+            const subject = await Subject.findById(req.body.Subject);
+            const clas = await Classes.findById(req.body.class);
+            const classroom=await room.findById(req.body.Classroom);
+            const group = req.body.group;
+            const day = req.body.Day;
+            const start = req.body.starttime;
+            const end = req.body.endtime;
+            console.log("d5alna")
+           let sessions =(parseInt(end, 10)- parseInt(start, 10))/50
+           let a=0
+           if(parseInt(start, 10)<1200) {a=((parseInt(start, 10)-parseInt("800", 10))/50)}
+            else  {a=((parseInt(start, 10)-parseInt("800", 10))/50)-3}
+                for (let j = a; j < a+sessions; j++) {
+                 timetable.Timetable[parseInt(day, 10)][j]= subject.SubjectName+" - "+clas.ClassName+" - "+group+" - "+classroom.Type+"-"+classroom.Number;
+                 console.log(timetable.Timetable[parseInt(day, 10)][j])
                 }
             }
-            
-        }
-        timetable.save();
+         timetable.save();
          res.json(timetable);    
      } catch (error) {
          console.error("Error Updating Data:", error.message);

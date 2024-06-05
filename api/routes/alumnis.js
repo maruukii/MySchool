@@ -4,7 +4,10 @@ const router=express.Router();
 
 router.get('/', async (req, res) => {
     try{
-        const alumnis = await Alumni.find();
+        const alumnis = await Alumni.find().populate({
+            path: 'Class',
+            select: 'ClassName'
+        });
 	    res.json(alumnis);
 } catch (error) {
     console.error("Error Fetching Data:", error.message);
@@ -20,13 +23,19 @@ try {
         res.status(404).send("Data not Found")
     }
 });
+
+
 router.post('/new', (req, res) => {
     try {
+        var spec=req.body.Spec;
+        if(req.body.Spec==null){spec="No Specialty"}
         const alumni = new Alumni({
             FirstName: req.body.FirstName,
             LastName: req.body.LastName,
             Age: req.body.Age,
-            Spec:req.body.Spec
+            Spec:spec,
+            Level:req.body.Level,
+            Class:null,
         })
     
         alumni.save();
@@ -53,10 +62,13 @@ try {
 router.put('/update/:id', async (req, res) => {
     try {
         const alumni = await Alumni.findById(req.params.id);
+        if(req.body.Spec!=alumni.Spec){alumni.Class=null}
+        if(req.body.Level!=alumni.Level){alumni.Class=null}
         if(req.body.FirstName){alumni.FirstName= req.body.FirstName;}
         if(req.body.LastName){alumni.LastName= req.body.LastName;}
         if(req.body.Age){ alumni.Age=req.body.Age;}
-        if(req.body.Spe){alumni.Spec=req.body.Spec;}
+        if(req.body.Spec){alumni.Spec=req.body.Spec;}
+        if(req.body.Level){alumni.Level=req.body.Level;}
         if(req.body.Class){alumni.Class=req.body.Class;}
     
         alumni.save();

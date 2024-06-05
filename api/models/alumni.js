@@ -17,6 +17,10 @@ const AlumniSchema = new Schema({
 	},
     Spec: {
 		type: String,
+        required:false
+	},
+	Level: {
+		type: String,
         required:true
 	},
 	Class: {
